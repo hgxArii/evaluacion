@@ -1,0 +1,207 @@
+/* ==========================================
+   VARIABLES DE COLOR (PASTELES EJECUTIVOS)
+   ========================================== */
+:root {
+  --bg-main: #f8f9fa;
+  --bg-card: #ffffff;
+  --primary-pastel: #84a59d;     /* Verde Salvia ejecutivo */
+  --primary-hover: #6b8e86;
+  --secondary-pastel: #f7d6c8;   /* Melocotón suave */
+  --accent-pastel: #a8dadc;      /* Azul pastel */
+  --text-dark: #2d3748;
+  --text-muted: #718096;
+  --border-color: #e2e8f0;
+  --error-color: #e57373;        /* Rojo suave para errores */
+  --success-color: #81c784;      /* Verde suave para éxitos */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(132, 165, 157, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+/* Reset y Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* ==========================================
+   ESTRUCTURA VERTICAL PRINCIPAL (.contenedor)
+   ========================================== */
+.contenedor {
+  width: 100%;
+  max-width: 680px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Títulos principales */
+.contenedor > h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  background: linear-gradient(135deg, #e0ebe8 0%, #f7d6c8 100%);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 4px;
+}
+
+.contenedor > h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* ==========================================
+   SECCIÓN DE FORMULARIO (<section>)
+   ========================================== */
+.contenedor > section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bg-main);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+/* Etiquetas (Labels) */
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Campos de entrada e Inputs */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  background-color: var(--bg-card);
+  color: var(--text-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-pastel);
+  box-shadow: 0 0 0 3px rgba(132, 165, 157, 0.15);
+}
+
+/* Mensajes de error específicos (<span class="error">) */
+.error {
+  font-size: 0.8rem;
+  color: var(--error-color);
+  font-weight: 600;
+  min-height: 14px; /* Evita saltos bruscos si está vacío */
+}
+
+/* Botón de Registro (<button>) */
+button[type="button"] {
+  background-color: var(--primary-pastel);
+  color: #ffffff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+button[type="button"]:hover {
+  background-color: var(--primary-hover);
+}
+
+button[type="button"]:active {
+  transform: scale(0.98);
+}
+
+/* Mensaje de éxito (<p id="mensajeExito">) */
+.exito {
+  font-size: 0.9rem;
+  color: #2e7d32;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ==========================================
+   TABLA DE TORNEOS REGISTRADOS (<table>)
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+thead {
+  background-color: var(--primary-pastel);
+  color: #ffffff;
+}
+
+th {
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--bg-main);
+}
+
+tbody tr:hover {
+  background-color: #f0f4f1;
+}
